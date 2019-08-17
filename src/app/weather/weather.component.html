@@ -1,0 +1,24 @@
+<div>
+  <br>
+  <h5>Type a location in the world and find out its temperature, Longitude, and Latitude</h5>
+
+  <br><div class="col-sm-8 col-sm-offset-2">
+    <form [formGroup]="weatherForm" (ngSubmit)="getWeather()">
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" class="form-control" formControlName="address" >
+      </div>
+      <button type="submit" class="btn btn-primary">Soumettre</button>
+    </form>
+
+
+</div>
+<div class="col-sm-8 col-sm-offset-2">
+  <label *ngIf=data?.place>Chosen address: {{data?.place}}</label><br>
+  <label *ngIf=data?.temperature>Temperature: {{data?.temperature}}</label><br>
+  <label *ngIf=data?.lat>Latitude: {{data?.lat}}</label><br>
+  <label *ngIf=data?.long>Longitude: {{data?.long}}</label>
+  <label *ngIf=data?.error style='color:red'>Error: {{data?.error}}</label>
+
+
+</div>
