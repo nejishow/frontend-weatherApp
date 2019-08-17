@@ -8,6 +8,6 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
   getProducts(address) {
-    return this.http.get('http://localhost:3000/weather?address=' + address);
+    return this.http.get('https://node-backend-weatherapp.herokuapp.com/weather?address=' + address);
   }
 }
